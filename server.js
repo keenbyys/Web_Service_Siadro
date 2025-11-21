@@ -16,8 +16,7 @@ const lecturerData = {
         "“Fundamentals of Higher Mathematics and Modern Information Systems,”",
         "“Object-Oriented Programming,”",
         "“Software Development Technology.”"
-    ],
-    experience: []  // Якщо є досвід, додайте сюди; наразі порожній масив
+    ]
 };
 const server = http.createServer((req, res) => {
     const parsedUrl = url.parse(req.url, true);
@@ -29,7 +28,7 @@ const server = http.createServer((req, res) => {
         res.end(JSON.stringify(lecturerData));
         return;
     }
-    // Статичні файли з папки client
+
     let filePath = parsedUrl.pathname === '/' ? '/index.html' : parsedUrl.pathname;
     filePath = path.join(__dirname, 'client', filePath);
     const ext = path.extname(filePath).toLowerCase();
@@ -58,6 +57,6 @@ const server = http.createServer((req, res) => {
 });
 server.listen(PORT, '0.0.0.0', () => {
     console.log('Сервер запущен!');
-    console.log('Сайт: https://oksana-lebid-page.onrender.com');  // Замініть на ваше ім'я проєкту
+    console.log('Сайт: https://oksana-lebid-page.onrender.com');
     console.log('API: https://oksana-lebid-page.onrender.com/api/lecturer');
 });
