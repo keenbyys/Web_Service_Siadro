@@ -1,7 +1,13 @@
+
 {
-    "name": "sum-server",
-    "version": "1.0.0",
-    "scripts": {
-        "start": "node server_sum.js"
-    }
+  "name": "professor-profile",
+  "version": "1.0.0",
+  "description": "Профіль викладача",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
 }
