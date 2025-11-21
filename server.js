@@ -58,6 +58,6 @@ const server = http.createServer((req, res) => {
 });
 server.listen(PORT, '0.0.0.0', () => {
     console.log('Сервер запущен!');
-    console.log('Сайт: https://your-project-name.onrender.com');  // Замініть на ваше ім'я проєкту
+    console.log('Сайт: https://oksana-lebid-page.onrender.com');  // Замініть на ваше ім'я проєкту
     console.log('API: https://your-project-name.onrender.com/api/lecturer');
 });
