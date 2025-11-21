@@ -27,19 +27,19 @@
             <div class="div__list">
                 <div class="div__text_pofile">
                     <h2>Name:</h2>
-                    <p>Oksana Yuriivna Lebid</p>
+                    <p id="fullName"></p>
                 </div>
                 <div class="div__text_pofile">
                     <h2>Email:</h2>
-                    <p>Lebyed_oksana@ua.fm, lebid@umsf.dp.ua</p>
+                    <p id="email"></p>
                 </div>
                 <div class="div__text_pofile">
                     <h2>Phone:</h2>
-                    <p>+380000000000</p>
+                    <p id="phone"></p>
                 </div>
                 <div class="div__text_pofile">
                     <h2>Teaching position:</h2>
-                    <p class="no_margin_left">Associate Professor, Department of Higher Mathematics and Informatics</p>
+                    <p class="no_margin_left" id="position"></p>
                 </div>
 
                 <div class="div__container_btns">
@@ -54,14 +54,12 @@
         <div class="div__background_dls_profile side_margin">
             <div class="div__text_dls_profile">
                 <h2>Field of scientific interest:</h2>
-                <p>“Optimization methods and algorithms, theoretical issues of computer science and cybernetics,
-                    cognitive modeling, cognitive psychology.”</p>
+                <p id="fieldOfInterest"></p>
             </div>
 
             <div class="div__text_dls_profile">
                 <h2>Subjects taught:</h2>
-                <p>“Higher and Applied Mathematics,” “Fundamentals of Higher Mathematics and Modern Information
-                    Systems,” “Object-Oriented Programming,” “Software Development Technology.”</p>
+                <p id="subjects"></p>
             </div>
         </div>
     </div>
@@ -83,6 +81,24 @@
         </div>
     </footer>
 </body>
+
+<script>
+    // Скрипт для завантаження даних з API
+    document.addEventListener('DOMContentLoaded', function () {
+        fetch('/api/lecturer')
+            .then(response => response.json())
+            .then(data => {
+                const lecturer = data.lecturer;
+                document.getElementById('fullName').textContent = lecturer.fullName;
+                document.getElementById('email').textContent = lecturer.email;
+                document.getElementById('phone').textContent = lecturer.phone;
+                document.getElementById('position').textContent = lecturer.position;
+                document.getElementById('fieldOfInterest').textContent = lecturer.fieldOfInterest;
+                document.getElementById('subjects').textContent = data.subjects.join(' ');
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    });
+</script>
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {

@@ -1,13 +1,13 @@
-
 {
-  "name": "professor-profile",
+  "name": "my-lecturer-project",
   "version": "1.0.0",
-  "description": "Профіль викладача",
+  "description": "Personal lecturer page",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
+  "dependencies": {},
   "engines": {
-    "node": ">=18"
+    "node": ">=14"
   }
 }
